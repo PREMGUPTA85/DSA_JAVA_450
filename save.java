@@ -97,6 +97,12 @@ class Solution {
             arr[i] = 2;
         }
    
+ }
+       
+}
+
+
+
 
 
   
