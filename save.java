@@ -87,12 +87,12 @@ class Solution {
         }
         
         // now inserting element's till count size
-        for(int i = 0 ; i < countz; i++){
-      
-        for(int i = countz + counto ; i < countz + counto + countt; i++){
-            arr[i] = 2;
+        for(int i = 0 ; i < countz; i++){      
+            arr[i] = 0;
         }
-    }
+        for(int i = countz; i < countz + counto; i++){
+            arr[i] = 1;
+       
 }
 
 
