@@ -71,9 +71,15 @@ class GfG {
     public static void main(String[] args) {
         int[] arr = {3, 5, 4, 1, 9};
         ArrayList<Integer> result = findMinMax(arr);
-        System.out.println(result.get(0) + " " +
+        System.out.println(result.get(0) + " " + result.get(1));
+          }
+}
 
 
 
 
 
+
+
+
+  
