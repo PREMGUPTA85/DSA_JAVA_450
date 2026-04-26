@@ -47,3 +47,10 @@ Input: arr[] = [22, 14, 8, 17, 35, 3]
 Output: [3, 35] 
 Explanation: The minimum element is 3, and the maximum element is 35.
 // */
+
+import java.util.ArrayList;
+
+class GfG {
+    public static ArrayList<Integer> findMinMax(int[] arr) {
+        int mini = Integer.MAX_VALUE;
+        
