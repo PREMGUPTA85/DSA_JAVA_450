@@ -75,7 +75,14 @@ class GfG {
           }
 }
 
-
+        for(int i = countz; i < countz + counto; i++){
+            arr[i] = 1;
+        }
+        for(int i = countz + counto ; i < countz + counto + countt; i++){
+            arr[i] = 2;
+        }
+    }
+}
 
 
 
