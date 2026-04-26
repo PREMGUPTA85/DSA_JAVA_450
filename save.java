@@ -66,6 +66,8 @@ class GfG {
         result.add(maxi);
         return result;
     
+}
 
-
-
+    public static void main(String[] args) {
+        int[] arr = {3, 5, 4, 1, 9};
+      
