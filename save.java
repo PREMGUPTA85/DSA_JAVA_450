@@ -75,9 +75,20 @@ class GfG {
           }
 }
 
-        for(int i = countz; i < countz + counto; i++){
-            arr[i] = 1;
+class Solution {
+    public void sort012(int[] arr) {
+        // algorithm --> count 0, 1, 2
+        int countz = 0, counto = 0, countt = 0;
+        // then insert in same array --> 0, 1, 2
+        for(int num : arr) {
+            if(num == 0) countz++;
+            else if(num == 1) counto++;
+            else countt++;
         }
+        
+        // now inserting element's till count size
+        for(int i = 0 ; i < countz; i++){
+      
         for(int i = countz + counto ; i < countz + counto + countt; i++){
             arr[i] = 2;
         }
