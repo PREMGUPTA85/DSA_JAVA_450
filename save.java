@@ -53,4 +53,7 @@ import java.util.ArrayList;
 class GfG {
     public static ArrayList<Integer> findMinMax(int[] arr) {
         int mini = Integer.MAX_VALUE;
+        int maxi = Integer.MIN_VALUE;
         
+        // Find minimum and maximum
+      
