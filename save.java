@@ -90,6 +90,8 @@ class Solution {
         for(int i = 0 ; i < countz; i++){      
             arr[i] = 0;
         }
+        
+        for(int i = countz; i < countz +
    
  }
        
