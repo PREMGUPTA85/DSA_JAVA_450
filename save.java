@@ -84,7 +84,11 @@ class Solution {
             if(num == 0) countz++;
             else if(num == 1) counto++;
             else countt++;
- 
+        }
+        
+        // now inserting element's till count size
+        for(int i = 0 ; i < countz; i++){      
+            arr[i] = 0;
         }
    
  }
