@@ -91,7 +91,8 @@ class Solution {
             arr[i] = 0;
         }
         
-        for(int i = countz; i < countz +
+        for(int i = countz; i < countz +  counto; i++){
+            arr[i] = 
    
  }
        
