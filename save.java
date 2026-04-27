@@ -156,4 +156,6 @@ Output: -12 -13 -5 -7 -3 -6 11 6 5
 //         int[] arr = {-12, 11, -13, -5, 6, -7, 5, -3, -6};
 //   int[] ans = move(arr);
 
-//  
+//         for (int num : ans) {
+//             System.out.print(num + " ");
+
