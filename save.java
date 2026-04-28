@@ -170,4 +170,7 @@ Output: -12 -13 -5 -7 -3 -6 11 6 5
 // class Solution {
 //     public void reverseString(char[] s) {
 //         int i = 0, j = s.length - 1;
-//   
+//  while(i < j){
+//             char c = s[i];
+// 
+
