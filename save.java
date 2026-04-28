@@ -229,6 +229,13 @@ class Main{
 /*
 Dry run :-- 
 // print duplicates 
+geeksforgeeks --> g --> 2
+e --> 4
+k --> 2
+s --> 2
+
+
+
 
 // agar count 1 se bda h to 
 */
