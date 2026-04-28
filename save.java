@@ -183,4 +183,11 @@ Output: -12 -13 -5 -7 -3 -6 11 6 5
 // Palimdrome 
 // class Solution {
 //     boolean isPalindrome(String s) {
-//        
+//         int i = 0, j = s.length() - 1;
+//         while(i < j){
+//             if(s.charAt(i) != s.charAt(j)) return false;
+//             i++;
+//             j--;
+            
+//         }
+//         return true;
