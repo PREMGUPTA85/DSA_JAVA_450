@@ -170,7 +170,7 @@ Output: -12 -13 -5 -7 -3 -6 11 6 5
 // class Solution {
 //     public void reverseString(char[] s) {
 //         int i = 0, j = s.length - 1;
-//  while(i < j){
+//         while(i < j){
 //             char c = s[i];
 //             s[i] = s[j];
 //             s[j] = c;
@@ -195,7 +195,40 @@ Output: -12 -13 -5 -7 -3 -6 11 6 5
 // }
 
 
+/*
+Input: s = "geeksforgeeks"
+Output: ['e', 4], ['g', 2], ['k', 2], ['s', 2]
+Explanation: Characters e, g, k, and s appear more than once. Their counts are shown in order of first occurrence.
+*/
 
+import java.util.*;
 
+class Main{
+    static void printDuplicates(String s){
+        char[] arr = s.toCharArray();
+    Arrays.sort(arr); // eeeefggkkss
+    for(int i = 0; i < arr.length; ){
+        int count = 1;
+        // i = 0 --> 0 + 1 -> 1 < 13 && e == e(duplicate find krna)
+        while(i + count  < arr.length && arr[i] == arr[i + count]){
+            count++;
+        } 
+        if(count > 1) {
+            System.out.println(arr[i] + " " + count);
+        }
+        i += count;
+    }
+    }
 
+    public static void main(String[] args) {
+        String s = "geeksforgeeks";
+        printDuplicates(s);
+    }
+}
 
+/*
+Dry run :-- 
+// print duplicates 
+
+// agar count 1 se bda h to 
+*/
