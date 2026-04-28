@@ -234,7 +234,10 @@ e --> 4
 k --> 2
 s --> 2
 
+// eeee f  ggkk ss
+// 0123 4 5678910
 
+i = 0 --> 
 
 
 // agar count 1 se bda h to 
