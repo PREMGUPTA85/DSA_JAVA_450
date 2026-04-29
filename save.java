@@ -255,6 +255,7 @@ i = 5 --> g -->
 arr[i] == arr[i + count] i = 4 --> i + count < 11 -->  f --
 4 + 1 --> 5 < 11 && 4 != 4 + 1 --> 4 !=5
 // iska mtlb equal nhi h
+ to exit ho jao ab bahar aa jao 
 i = i 
 
 
