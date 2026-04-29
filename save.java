@@ -255,7 +255,10 @@ i = 5 --> g -->
 
 5 + 1 --> 6 < 11 && g == g
 arr[i] == arr[i + count] i = 4 --> i + count < 11 -->  f --
-4 + 1 --
+4 + 1 --> 5 < 11 && 4 != 4 + 1 --> 4 !=5
+// iska mtlb equal nhi h
+
+
 
 // agar count 1 se bda h to 
 */
