@@ -163,8 +163,49 @@ Output: -12 -13 -5 -7 -3 -6 11 6 5
 //     }
 // }
 
+// User function Template for C++
+
+// class Solution {
+//   public:
+//     void rotate(vector<int> &arr) {
+//         int length = arr.size();
+//         // shift by 1 krna h 
+//         //sbse pehle agar array k last element store krna 
+//         // store = 5
+//         int store = arr[length - 1];
+//         // aur fhir 1 shift krna array k elements ko
+//         // .. | 1 | 2 | 3 | 4|
+//         for(int i = length - 1; i > 0; i--){
+//             arr[i] = arr[i - 1];
+//         }
+//         // arr[4] = arr[3]
+//         // arr[3] = arr[2]
+//         // arr[2] = arr[1]
+//         // arr[1] = arr[0]
+//         arr[0] = store;
+        
+//         // aur fhir last element ko 1st index p store krna 
+//         //  5 | 1 | 2 | 3 | 4 |
+//     }
+// // };
+
+// 8, 13).------------Kadane's Algorithm-------------
+// class Solution {
+//     int maxSubarraySum(int[] arr) {
+//         // kadane algorithm --> largest subarray sum --> 
+//         int sum = arr[0];
+//         int Max = arr[0];
+//         for(int i = 1; i < arr.length; i++){
+//             sum = Math.max(arr[i], sum + arr[i]);
+//             // if(sum < 0) sum = 0; 
+//             Max = Math.max(Max, sum);
+//         }
+//         return Max;
+//     }
+// }
 
 
+// 9).---------
 
 // ------------------------(String)------------------------
 // Reverse String 
@@ -201,70 +242,3 @@ Input: s = "geeksforgeeks"
 Output: ['e', 4], ['g', 2], ['k', 2], ['s', 2]
 Explanation: Characters e, g, k, and s appear more than once. Their counts are shown in order of first occurrence.
 */
-
-import java.util.*;
-
-class Main{
-    static void printDuplicates(String s){
-        char[] arr = s.toCharArray();
-    Arrays.sort(arr); // eeeefggkkss
-    for(int i = 0; i < arr.length; ){
-        int count = 1;
-        // i = 0 --> 0 + 1 -> 1 < 13 && e == e(duplicate find krna)
-        while(i + count  < arr.length && arr[i] == arr[i + count]){
-            count++;
-        } 
-        if(count > 1) {
-            System.out.println(arr[i] + " " + count);
-        }
-        i += count;
-    }
-    }
-
-    public static void main(String[] args) {
-        String s = "geeksforgeeks";
-        printDuplicates(s);
-    }
-}
-
-/*
-Dry run :-- 
-// print duplicates 
-geeksforgeeks --> g --> 2
-e --> 4
-k --> 2
-s --> 2
-
-
-// eeee f  ggkk ss
-// 0123 4 5678910
-
-i = 0 --> 
-count = 1;
-
-// jb tk equal h loop m hi run kro
-// 0 + 1 --> 1 < 13     &&  arr[0] = e  == arr[i + 1] == e -->count = 2;
-//  0 + 2 --> 2 < 13  &&  e == arr[0 + 2] --> e == arr[2] --> e == e --> count = 3;
-// 0 + 3 --> 3 < 13 && e ==  arr[0 + 3] --> e == e  count == 4(increment)
-
-
-now i = i + count = 0 + 3 = 3 
-
-
-i = 5 --> g -->  
-
-5 + 1 --> 6 < 11 && g == g
-arr[i] == arr[i + count] i = 4 --> i + count < 11 -->  f --
-4 + 1 --> 5 < 11 && 4 != 4 + 1 --> 4 !=5
-// iska mtlb equal nhi h
- to exit ho jao ab bahar aa jao 
-i = i arr[i] == arr[i + count] i = 4 --> i + count < 11 -->  f --
-4 + 1 --> 5 < 11 && 4 != 4 + 1 --> 4 !=5
-// iska mtlb equal nhi h
- to exit ho jao ab bahar aa jao 
-i = i 
-
-
-// agar count 1 se bda h to 
-*/
-
