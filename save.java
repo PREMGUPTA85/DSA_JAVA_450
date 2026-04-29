@@ -254,8 +254,8 @@ now i = i + count = 0 + 3 = 3
 i = 5 --> g -->  
 
 5 + 1 --> 6 < 11 && g == g
-
-
+arr[i] == arr[i + count] i = 4 --> i + count < 11 -->  f --
+4 + 1 --
 
 // agar count 1 se bda h to 
 */
