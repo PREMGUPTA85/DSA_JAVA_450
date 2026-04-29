@@ -242,3 +242,65 @@ Input: s = "geeksforgeeks"
 Output: ['e', 4], ['g', 2], ['k', 2], ['s', 2]
 Explanation: Characters e, g, k, and s appear more than once. Their counts are shown in order of first occurrence.
 */
+
+import java.util.*;
+
+class Main{
+    static void printDuplicates(String s){
+        char[] arr = s.toCharArray();
+    Arrays.sort(arr); // eeeefggkkss
+    for(int i = 0; i < arr.length; ){
+        int count = 1;
+        // i = 0 --> 0 + 1 -> 1 < 13 && e == e(duplicate find krna)
+        while(i + count  < arr.length && arr[i] == arr[i + count]){
+            count++;
+        } 
+        if(count > 1) {
+            System.out.println(arr[i] + " " + count);
+        }
+        i += count;
+    }
+    }
+
+    public static void main(String[] args) {
+        String s = "geeksforgeeks";
+        printDuplicates(s);
+    }
+}
+
+/*
+Dry run :-- 
+// print duplicates 
+geeksforgeeks --> g --> 2
+e --> 4
+k --> 2
+s --> 2
+
+
+// eeee f  ggkk ss
+// 0123 4 5678910
+
+i = 0 --> 
+count = 1;
+
+// jb tk equal h loop m hi run kro
+// 0 + 1 --> 1 < 13     &&  arr[0] = e  == arr[i + 1] == e -->count = 2;
+//  0 + 2 --> 2 < 13  &&  e == arr[0 + 2] --> e == arr[2] --> e == e --> count = 3;
+// 0 + 3 --> 3 < 13 && e ==  arr[0 + 3] --> e == e  count == 4(increment)
+
+
+now i = i + count = 0 + 3 = 3 
+
+i = 4 --> i + count < 11 -->  f --
+4 + 1 --> 5 < 11 && 4 != 4 + 1 --> 4 !=5
+// iska mtlb equal nhi h to exit ho jao ab bahar aa jao 
+i = i 
+
+i = 5 --> g -->  
+5 + 1 --> 6 < 11 && g == g
+arr[i] == arr[i + count] 
+
+// agar count 1 se bda h to 
+*/
+
+//Check if Strings Are Rotations of Each Other
