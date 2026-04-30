@@ -284,7 +284,12 @@ i = 0 -->
 count = 1;
 
 
-arr[i] == arr[i + count] 
+arr[i] == arr[i + count] // jb tk equal h loop m hi run kro
+// 0 + 1 --> 1 < 13     &&  arr[0] = e  == arr[i + 1] == e -->count = 2;
+
+
+i = 5 --> g -->  
+5 + 1 --> 6 < 11 && g == g
 
 // agar count 1 se bda h to 
 */
