@@ -283,21 +283,7 @@ s --> 2
 i = 0 --> 
 count = 1;
 
-// jb tk equal h loop m hi run kro
-// 0 + 1 --> 1 < 13     &&  arr[0] = e  == arr[i + 1] == e -->count = 2;
-//  0 + 2 --> 2 < 13  &&  e == arr[0 + 2] --> e == arr[2] --> e == e --> count = 3;
-// 0 + 3 --> 3 < 13 && e ==  arr[0 + 3] --> e == e  count == 4(increment)
 
-
-now i = i + count = 0 + 3 = 3 
-
-i = 4 --> i + count < 11 -->  f --
-4 + 1 --> 5 < 11 && 4 != 4 + 1 --> 4 !=5
-// iska mtlb equal nhi h to exit ho jao ab bahar aa jao 
-i = i 
-
-i = 5 --> g -->  
-5 + 1 --> 6 < 11 && g == g
 arr[i] == arr[i + count] 
 
 // agar count 1 se bda h to 
