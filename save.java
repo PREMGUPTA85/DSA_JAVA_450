@@ -289,7 +289,11 @@ arr[i] == arr[i + count] // jb tk equal h loop m hi run kro
 
 
 i = 5 --> g -->  
-5 + 1 --> 6 < 11 && g == g
+5 + 1 --> 6 < 11 && g == g//  0 + 2 --> 2 < 13  &&  e == arr[0 + 2] --> e == arr[2] --> e == e --> count = 3;
+
+4 + 1 --> 5 < 11 && 4 != 4 + 1 --> 4 !=5
+// iska mtlb equal nhi h to exit ho jao ab bahar aa jao 
+i = i 
 
 // agar count 1 se bda h to 
 */
