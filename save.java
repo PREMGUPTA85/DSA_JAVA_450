@@ -243,30 +243,30 @@ Output: ['e', 4], ['g', 2], ['k', 2], ['s', 2]
 Explanation: Characters e, g, k, and s appear more than once. Their counts are shown in order of first occurrence.
 */
 
-import java.util.*;
+// import java.util.*;
 
-class Main{
-    static void printDuplicates(String s){
-        char[] arr = s.toCharArray();
-    Arrays.sort(arr); // eeeefggkkss
-    for(int i = 0; i < arr.length; ){
-        int count = 1;
-        // i = 0 --> 0 + 1 -> 1 < 13 && e == e(duplicate find krna)
-        while(i + count  < arr.length && arr[i] == arr[i + count]){
-            count++;
-        } 
-        if(count > 1) {
-            System.out.println(arr[i] + " " + count);
-        }
-        i += count;
-    }
-    }
+// class Main{
+//     static void printDuplicates(String s){
+//         char[] arr = s.toCharArray();
+//     Arrays.sort(arr); // eeeefggkkss
+//     for(int i = 0; i < arr.length; ){
+//         int count = 1;
+//         // i = 0 --> 0 + 1 -> 1 < 13 && e == e(duplicate find krna)
+//         while(i + count  < arr.length && arr[i] == arr[i + count]){
+//             count++;
+//         } 
+//         if(count > 1) {
+//             System.out.println(arr[i] + " " + count);
+//         }
+//         i += count;
+//     }
+//     }
 
-    public static void main(String[] args) {
-        String s = "geeksforgeeks";
-        printDuplicates(s);
-    }
-}
+//     public static void main(String[] args) {
+//         String s = "geeksforgeeks";
+//         printDuplicates(s);
+//     }
+// }
 
 /*
 Dry run :-- 
@@ -283,25 +283,132 @@ s --> 2
 i = 0 --> 
 count = 1;
 
-
-arr[i] == arr[i + count] // jb tk equal h loop m hi run kro
+// jb tk equal h loop m hi run kro
 // 0 + 1 --> 1 < 13     &&  arr[0] = e  == arr[i + 1] == e -->count = 2;
-
-i = 5 --> g -->  
-5 + 1 --> 6 < 11 && g == g//  0 + 2 --> 2 < 13  &&  e == arr[0 + 2] --> e == arr[2] --> e == e --> count = 3;
-
-4 + 1 --> 5 < 11 && 4 != 4 + 1 --> 4 !=5
+//  0 + 2 --> 2 < 13  &&  e == arr[0 + 2] --> e == arr[2] --> e == e --> count = 3;
 // 0 + 3 --> 3 < 13 && e ==  arr[0 + 3] --> e == e  count == 4(increment)
 
 
 now i = i + count = 0 + 3 = 3 
 
 i = 4 --> i + count < 11 -->  f --
+4 + 1 --> 5 < 11 && 4 != 4 + 1 --> 4 !=5
 // iska mtlb equal nhi h to exit ho jao ab bahar aa jao 
 i = i 
 
-// agar count 1 se bda h to 
+i = 5 --> g -->  
+5 + 1 --> 6 < 11 && g == g
+arr[i] == arr[i + count] 
 
+// agar count 1 se bda h to 
 */
 
-//Check if Strings Are Rotations of Each Other
+// 18. --find all pairs on integer array whose sum is equal to given number
+import java.util.*;
+// User function Template for Java
+
+class Solution {
+    public static ArrayList<ArrayList<Integer>> getPairs(int[] arr) {
+        // code here
+        // test case --> -1 0 1 2 -1 -4
+        // after sort bcz time complexity -- n log n
+        // -4 -1 -1 0 1 2 
+        // -4 + 2 = -2 < 0 i++ 
+        // -1 + 2 = 1 > 0 j--
+        // -1 + 1 = 0 return pair
+        
+        // 2nd test case 
+        // run loop till i <= j
+        // --> 6, 1, 8, 0, 4, -9, -1, -10, -6, -5
+        // sort k baad --> -10 -9 -6 -5 -1 0 1  4 6 8 
+        // -10 + 8 = -2 < 0 i++
+        // -9 + 8 = -1 < 0 i++
+        // -6 + 8 = 2 > 0 j--
+        // -6 + 6 = 0 return this------------- and i++ j-- along with
+        // -5 + 4 = -1 < 0 i++
+        // -1 + 4 = 3 > 0 j--
+        // -1 + 1 = 0 return this and i++ j-- \
+        
+        // final answer list 2D list
+        ArrayList<ArrayList<Integer>> ans = new ArrayList<>();
+        
+        // tese case 
+        //arr -->  - 8 -10 -10 -10 10 6 1 10
+        
+        // sort an array
+        Arrays.sort(arr);
+        // -10 -10 -10 -8 1 6 10 10
+        
+        int i = 0; 
+        int j = arr.length - 1; //7
+        
+        while(i < j){
+            
+        int sum = arr[i] + arr[j] ;// -10 + 10 = 0 
+            if(sum == 0) {
+                // pair mil gya ab store krna h 
+                ArrayList<Integer> pair = new ArrayList<>();
+                
+                pair.add(arr[i]); // [-10]
+                pair.add(arr[j]); // [-10, 10]
+                
+                ans.add(pair); // [-10, 10]
+                
+                // now handling duplicate elements
+                int left = arr[i];// -10
+                int right = arr[j]; // 10
+                
+                while(i < j && arr[i] == left){
+                    i++;
+                }
+                
+                
+                while(i < j && arr[j] == right){
+                    j--;
+                }
+            }
+            
+            else if(sum < 0){
+                i++;
+            }
+            else {
+                j--;
+            }
+        }
+        return ans;
+    }
+}
+
+
+class Practice{
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+
+        // input size
+        int n = sc.nextInt();
+
+        int[] arr = new int[n];
+
+        for(int i = 0; i < n; i++){
+            arr[i] = sc.nextInt();
+        }
+
+        // function call
+        ArrayList<ArrayList<Integer>> result = Solution.getPairs(arr);
+
+        // printing original array
+        System.out.println("\nSorted Array: ");
+        System.out.println(Arrays.toString(arr));
+
+        if(result.size() == 0){
+            System.out.println("\nNo pair found");
+        }
+        else {
+            System.out.println("\nParis whose sum is 0: ");
+            
+            for(ArrayList<Integer> pair: result){
+                System.out.println(pair.get(0) + " " + pair(1));
+            }
+        }
+    }
+}
