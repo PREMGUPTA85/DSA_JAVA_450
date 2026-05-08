@@ -582,4 +582,6 @@ public class Main {
         // Creating loop manually
         head.next.next.next.next = head.next;
 
-       
+ Solution obj = new Solution();
+
+   
