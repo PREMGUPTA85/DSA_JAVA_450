@@ -584,4 +584,14 @@ public class Main {
 
  Solution obj = new Solution();
 
-   
+        boolean ans = obj.detectLoop(head);
+
+        if(ans) {
+            System.out.println("Loop Detected");
+        }
+        else {
+            System.out.println("No Loop");
+        }
+    }
+}
+
